@@ -8,6 +8,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.inject.Inject;
+import com.infusion.apollo.framework.example.IExample;
+import com.infusion.apollo.framework.log.ILog;
 
 import roboguice.activity.RoboActivity;
 import roboguice.inject.ContentView;
@@ -24,6 +26,12 @@ public class MainActivity extends RoboActivity {
 
     @Inject
     private Vibrator mVibrator;
+
+    @Inject
+    private IExample mExample;
+
+    @Inject
+    private ILog mLogger;
 
     @InjectResource(R.string.take_nap)
     public String mTakeNap;
@@ -43,7 +51,10 @@ public class MainActivity extends RoboActivity {
             mVibrator.vibrate(1000);
 
             // sample toast message
-            Toast.makeText(view.getContext(), mTakeNap, Toast.LENGTH_SHORT).show();
+            String toastMessage = String.format("%s %d", mTakeNap, mExample.getNumber());
+            Toast.makeText(view.getContext(), toastMessage, Toast.LENGTH_SHORT).show();
+
+            mLogger.d(MainActivity.class.getSimpleName(), "User click image.");
         }
     };
 }
