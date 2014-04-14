@@ -1,11 +1,14 @@
-package com.infusion.apollo.framework.Log;
+package com.infusion.apollo.framework.temp;
 
 import android.util.Log;
+
+import javax.inject.Singleton;
 
 /**
  * Created by ali on 13/04/14.
  */
-public class BasicLog implements ILog {
+@Singleton
+public class LogWrapper implements ILog {
     @Override
     public void v(String tag, String msg) {
         Log.v(tag, msg);

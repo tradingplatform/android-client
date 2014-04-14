@@ -1,4 +1,4 @@
-package com.infusion.apollo.framework.log;
+package com.infusion.apollo.framework.temp;
 
 /**
  * Created by ali on 13/04/14.

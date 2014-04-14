@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.google.inject.Inject;
 import com.infusion.apollo.framework.example.IExample;
-import com.infusion.apollo.framework.log.ILog;
+import com.infusion.apollo.framework.temp.ILog;
 
 import roboguice.activity.RoboActivity;
 import roboguice.inject.ContentView;
