@@ -4,8 +4,8 @@ import com.google.inject.Binder;
 import com.google.inject.Module;
 import com.infusion.apollo.framework.example.Example;
 import com.infusion.apollo.framework.example.IExample;
-import com.infusion.apollo.framework.temp.ILog;
-import com.infusion.apollo.framework.temp.LogWrapper;
+import com.infusion.apollo.framework.log.ILog;
+import com.infusion.apollo.framework.log.LogWrapper;
 
 /**
  * Created by ali on 13/04/14.

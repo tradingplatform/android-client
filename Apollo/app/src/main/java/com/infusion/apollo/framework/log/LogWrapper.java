@@ -1,4 +1,4 @@
-package com.infusion.apollo.framework.temp;
+package com.infusion.apollo.framework.log;
 
 import android.util.Log;
 
