@@ -70,7 +70,7 @@ public class MockStockDataPublisher implements IStockDataPublisher {
                     }
                 }
 
-                SleepSafely(PollFrequencyMilliseconds);
+                sleepSafely(PollFrequencyMilliseconds);
             }
         }
 
@@ -113,7 +113,7 @@ public class MockStockDataPublisher implements IStockDataPublisher {
             return lower + mRandom.nextInt(range);
         }
 
-        private void SleepSafely(int milliseconds) {
+        private void sleepSafely(int milliseconds) {
             try {
                 Thread.sleep(milliseconds);
             } catch (InterruptedException e) {
