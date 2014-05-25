@@ -1,5 +1,6 @@
 package com.infusion.apollo.app;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,41 +26,35 @@ public class StockDataFragment extends BaseFragment implements IStockDataSubscri
     @Inject
     private IStockDataPublisher mStockDataPublisher;
 
+    @InjectView(R.id.stock_text_view)
+    private TextView mStockView;
+
+    @InjectView(R.id.market_symbol_text_view)
+    private TextView mMarketSymbolView;
+
     @InjectView(R.id.last_text_view)
     private TextView mLastView;
 
     @InjectView(R.id.change_text_view)
     private TextView mChangeView;
 
-    @InjectView(R.id.volume_text_view)
-    private TextView mVolumeView;
+    @InjectView(R.id.change_percentage_text_view)
+    private TextView mChangePercentageView;
 
     @InjectView(R.id.bid_text_view)
     private TextView mBidView;
 
-    @InjectView(R.id.level_text_view)
-    private TextView mLevelView;
-
     @InjectView(R.id.ask_text_view)
     private TextView mAskView;
 
-    @InjectView(R.id.day_hi_text_view)
-    private TextView mDayHiView;
+    @InjectView(R.id.volume_text_view)
+    private TextView mVolumeView;
 
-    @InjectView(R.id.day_lo_text_view)
-    private TextView mDayLoView;
+    @InjectView(R.id.range_text_view)
+    private TextView mDayRangeView;
 
-    @InjectView(R.id.fifty_two_week_hi_text_view)
-    private TextView mFiftyTwoWeekHiView;
-
-    @InjectView(R.id.fifty_two_week_hi_date_text_view)
-    private TextView mFiftyTwoWeekHiDateView;
-
-    @InjectView(R.id.fifty_two_week_lo_text_view)
-    private TextView mFiftyTwoWeekLoView;
-
-    @InjectView(R.id.fifty_two_week_lo_date_text_view)
-    private TextView mFiftyTwoWeekLoDateView;
+    @InjectView(R.id.fifty_two_range_text_view)
+    private TextView mFiftyTwoRangeView;
 
     @InjectView(R.id.market_cap_text_view)
     private TextView mMarketCapView;
@@ -133,20 +128,21 @@ public class StockDataFragment extends BaseFragment implements IStockDataSubscri
 
     private void mergeStockData(StockData data) {
         // handle the event where we receive stock data - adapt to view
+        mStockView.setText("Google Inc.");
+        mMarketSymbolView.setText("(NASDAQ:GOOGL)");
+
         mLastView.setText(String.format("%.2f", data.Last));
-        mChangeView.setText(String.format("%.2f (%.2f%%)", data.Change, data.ChangePercent));
-        mVolumeView.setText(String.format("%.2fM", data.Volume / 1000000.0));
+        mChangeView.setText(String.format("+%.2f", data.Change));
+
+        mChangePercentageView.setText(String.format("(%.2f%%)", data.ChangePercent));
+        mChangePercentageView.setTextColor(Color.parseColor("#61C33B"));
+
         mBidView.setText(String.format("%.2fx%d", data.Bid, (int) data.BidFactor));
-        mLevelView.setText(data.Level);
         mAskView.setText(String.format("%.2fx%d", data.Ask, (int) data.AskFactor));
+        mVolumeView.setText(String.format("%.2fM", data.Volume / 1000000.0));
 
-        mDayHiView.setText(String.format("%.2f", data.DayHi));
-        mDayLoView.setText(String.format("%.2f", data.DayLo));
-
-        mFiftyTwoWeekHiView.setText(String.format("%.2f", data.FiftyTwoWeekHi));
-        mFiftyTwoWeekHiDateView.setText(mSimpleDataFormat.format(data.FiftyTwoWeekHiDate));
-        mFiftyTwoWeekLoView.setText(String.format("%.2f", data.FiftyTwoWeekLo));
-        mFiftyTwoWeekLoDateView.setText(mSimpleDataFormat.format(data.FiftyTwoWeekLoDate));
+        mDayRangeView.setText(String.format("%.2f - %.2f", data.DayLo, data.DayHi));
+        mFiftyTwoRangeView.setText(String.format("%.2f - %.2f", data.FiftyTwoWeekLo, data.FiftyTwoWeekHi));
 
         mMarketCapView.setText(String.format("%.1fB", data.MarketCap / 1000000000));
         mPricePerEarningsView.setText(String.format("%.1fx", data.PricePerEarnings));
