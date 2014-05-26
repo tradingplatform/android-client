@@ -23,7 +23,8 @@ public class MainActivity extends RoboFragmentActivity implements WatchListFragm
     public void onWatchListItemSelected(String market, String symbol) {
         // load stock data for symbol
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.left_pane_container, StockDataFragment.newInstance(market, symbol))
+                .replace(R.id.left_pane_container, StockDataFragment.newInstance(market, symbol))
+                .addToBackStack(null)
                 .commit();
     }
 }

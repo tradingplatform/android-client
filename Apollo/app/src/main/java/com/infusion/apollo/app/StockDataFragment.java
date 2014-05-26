@@ -133,9 +133,9 @@ public class StockDataFragment extends BaseFragment implements IStockDataSubscri
 
         mLastView.setText(String.format("%.2f", data.Last));
         mChangeView.setText(String.format("+%.2f", data.Change));
+        mChangeView.setTextColor(Color.parseColor("#61C33B"));
 
         mChangePercentageView.setText(String.format("(%.2f%%)", data.ChangePercent));
-        mChangePercentageView.setTextColor(Color.parseColor("#61C33B"));
 
         mBidView.setText(String.format("%.2fx%d", data.Bid, (int) data.BidFactor));
         mAskView.setText(String.format("%.2fx%d", data.Ask, (int) data.AskFactor));

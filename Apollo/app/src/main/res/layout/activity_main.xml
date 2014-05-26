@@ -5,6 +5,10 @@
     android:baselineAligned="false"
     android:divider="?android:attr/dividerHorizontal"
     android:orientation="horizontal"
+    android:paddingBottom="18dp"
+    android:paddingLeft="23dp"
+    android:paddingRight="23dp"
+    android:paddingTop="18dp"
     android:showDividers="middle"
     tools:context="com.infusion.apollo.app.MainActivity">
 
@@ -12,12 +16,14 @@
         android:id="@+id/left_pane_container"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:paddingRight="11dp" />
 
     <FrameLayout
         android:id="@+id/right_pane_container"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="2" />
+        android:layout_weight="2"
+        android:paddingLeft="11dp" />
 
 </LinearLayout>
