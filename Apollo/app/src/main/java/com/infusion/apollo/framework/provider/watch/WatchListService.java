@@ -127,7 +127,7 @@ public class WatchListService extends Service implements IWatchListService {
                 sign = 1;
             }
 
-            double increment = (double) (Math.round(sign * random.nextGaussian() * 10000) / 10000) / (double) 100;
+            double increment = (double) (Math.round(sign * random.nextGaussian() * 10000) / 10000) / (double) 10;
 
             InstrumentPriceSummary summary = mPricesSummaries.get(i);
             summary.setPrice(summary.getPrice() + increment);

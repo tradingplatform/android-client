@@ -49,11 +49,11 @@ public class InstrumentPriceSummaryAdapter extends BaseAdapter {
 
         if (summary.getPrice() > 0)
         {
-            layout.setBackgroundColor(Color.argb(255, 50, 150 + (int)(100 * summary.getPrice() / 30), 75));
+            layout.setBackgroundColor(Color.argb(255, 50, 150 + (int)(100 * summary.getPrice() / 20), 75));
         }
         else if (summary.getPrice() < 0)
         {
-            layout.setBackgroundColor(Color.argb(255, 150 + (int)(100 * -1 * summary.getPrice() / 30), 75, 50));
+            layout.setBackgroundColor(Color.argb(255, 150 + (int)(100 * -1 * summary.getPrice() / 20), 75, 50));
         }
         else
         {

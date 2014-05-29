@@ -23,7 +23,12 @@
                 android:background="@drawable/button_custom"
                 android:clickable="true"
                 android:text="DOW"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:gravity="left"
+                android:textColor="@android:color/white"
+                android:paddingLeft="8dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -89,7 +94,12 @@
                 android:background="@drawable/button_custom1"
                 android:clickable="true"
                 android:text="NASDAQ"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:gravity="left"
+                android:paddingLeft="8dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -154,7 +164,12 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_custom2"
                 android:text="S&amp;P 500"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:gravity="left"
+                android:paddingLeft="8dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp" />
 
             <TextView
                 android:id="@+id/textView"

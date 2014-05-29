@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="defaultColor">#9DCC00</color>
-    <color name="orange">#ffa9cc76</color>
-    <color name="orange1">#ffb68ece</color>
-    <color name="defaultColor1">#A666CE</color>
-    <color name="orange2">#ff97c4e7</color>
-    <color name="defaultColor2">#4FB6E7</color>
+    <color name="defaultColor2">#9DCC00</color>
+    <color name="orange2">#ffa9cc76</color>
+    <color name="orange">#ffb68ece</color>
+    <color name="defaultColor">#A666CE</color>
+    <color name="orange1">#ff97c4e7</color>
+    <color name="defaultColor1">#4FB6E7</color>
 
 
     <color name="drawerDivider">#FFD2D2D2</color>
