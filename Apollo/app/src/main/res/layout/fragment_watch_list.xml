@@ -3,7 +3,9 @@
     android:id="@+id/gridView1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:columnWidth="80dp"
     android:gravity="top|left"
     android:numColumns="auto_fit"
-    tools:context="com.infusion.apollo.app.WatchListFragment" />
+    tools:context="com.infusion.apollo.app.WatchListFragment"
+    android:clickable="false"
+    android:columnWidth="125dp"
+    android:stretchMode="none" />

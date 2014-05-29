@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="80dp"
-    android:layout_height="100dp"
+    android:layout_width="125dp"
+    android:layout_height="125dp"
     android:padding="1dip">
 
     <LinearLayout
         android:id="@+id/layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
         android:layout_gravity="right"
         android:background="@android:color/background_dark"
         android:orientation="vertical"
-        android:padding="5dp">
+        android:padding="5dp"
+        android:layout_alignParentEnd="true">
 
         <TextView
             android:id="@+id/instrumentIdTextView"
@@ -20,7 +21,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:text="APPLE"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/priceTextView"
@@ -28,7 +30,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:text="100"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/lastChangeTextView"
@@ -37,7 +40,7 @@
             android:layout_gravity="right"
             android:text="100"
             android:textColor="@android:color/white"
-            android:textSize="10sp" />
+            android:textSize="15sp" />
 
     </LinearLayout>
 </RelativeLayout>

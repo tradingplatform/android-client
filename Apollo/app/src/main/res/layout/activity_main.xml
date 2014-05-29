@@ -23,7 +23,7 @@
         android:id="@+id/right_pane_container"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="2"
+        android:layout_weight="1"
         android:paddingLeft="11dp" />
 
 </LinearLayout>

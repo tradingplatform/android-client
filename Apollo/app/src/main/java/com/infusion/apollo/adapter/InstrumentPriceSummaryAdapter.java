@@ -47,12 +47,17 @@ public class InstrumentPriceSummaryAdapter extends BaseAdapter {
 
         InstrumentPriceSummary summary = mSummaries.get(position);
 
-        if (summary.getLastChange() == 0) {
-            layout.setBackgroundColor(Color.argb(255, 100, 150, 255));
-        } else if (summary.getLastChange() > 0) {
-            layout.setBackgroundColor(Color.argb(255, 100, 255, 150));
-        } else {
-            layout.setBackgroundColor(Color.argb(255, 255, 150, 100));
+        if (summary.getPrice() > 0)
+        {
+            layout.setBackgroundColor(Color.argb(255, 50, 150 + (int)(100 * summary.getPrice() / 30), 75));
+        }
+        else if (summary.getPrice() < 0)
+        {
+            layout.setBackgroundColor(Color.argb(255, 150 + (int)(100 * -1 * summary.getPrice() / 30), 75, 50));
+        }
+        else
+        {
+            layout.setBackgroundColor(Color.argb(255, 0, 0, 0));
         }
 
         ((TextView) convertView.findViewById(R.id.instrumentIdTextView)).setText(summary.getInstrumentId());
