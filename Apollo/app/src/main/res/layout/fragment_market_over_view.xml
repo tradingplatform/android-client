@@ -25,10 +25,11 @@
                 android:text="DOW"
                 android:textStyle="bold"
                 android:gravity="left"
+                android:textSize="@dimen/market_watch_small_font_size"
                 android:textColor="@android:color/white"
-                android:paddingLeft="8dp"
-                android:paddingTop="4dp"
-                android:paddingBottom="4dp" />
+                android:paddingLeft="14dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -38,7 +39,7 @@
                 android:paddingRight="10dp"
                 android:paddingTop="10dp"
                 android:text="14,983.59"
-                android:textSize="18dp"
+                android:textSize="@dimen/market_watch_large_font_size"
                 android:textStyle="bold" />
 
             <TextView
@@ -50,7 +51,7 @@
                 android:paddingTop="2dp"
                 android:text="46.11"
                 android:textColor="#ff5bcc2b"
-                android:textSize="18dp"
+                android:textSize="@dimen/market_watch_large_font_size"
                 android:textStyle="bold" />
 
             <TextView
@@ -62,7 +63,7 @@
                 android:paddingTop="2dp"
                 android:text="(0.31%)"
                 android:textColor="#ffe5391f"
-                android:textSize="18dp"
+                android:textSize="@dimen/market_watch_large_font_size"
                 android:textStyle="bold" />
 
             <TextView
@@ -75,7 +76,7 @@
                 android:paddingTop="2dp"
                 android:text="53.12 M"
                 android:textColor="#a10f090c"
-                android:textSize="14dp"
+                android:textSize="@dimen/market_watch_small_font_size"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -95,11 +96,12 @@
                 android:clickable="true"
                 android:text="NASDAQ"
                 android:textStyle="bold"
+                android:textSize="@dimen/market_watch_small_font_size"
                 android:textColor="@android:color/white"
                 android:gravity="left"
-                android:paddingLeft="8dp"
-                android:paddingTop="4dp"
-                android:paddingBottom="4dp" />
+                android:paddingLeft="14dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -110,7 +112,7 @@
                 android:paddingRight="10dp"
                 android:paddingTop="10dp"
                 android:text="3,669.14"
-                android:textSize="18dp"
+                android:textSize="@dimen/market_watch_large_font_size"
                 android:textStyle="bold" />
 
             <TextView
@@ -122,7 +124,7 @@
                 android:paddingTop="2dp"
                 android:text="9.11"
                 android:textColor="#ff5bcc2b"
-                android:textSize="18dp"
+                android:textSize="@dimen/market_watch_large_font_size"
                 android:textStyle="bold" />
 
             <TextView
@@ -134,7 +136,7 @@
                 android:paddingTop="2dp"
                 android:text="(0.26%)"
                 android:textColor="#ffe5391f"
-                android:textSize="18dp"
+                android:textSize="@dimen/market_watch_large_font_size"
                 android:textStyle="bold" />
 
             <TextView
@@ -147,7 +149,7 @@
                 android:paddingTop="2dp"
                 android:text="217.04 M"
                 android:textColor="#a10f090c"
-                android:textSize="14dp"
+                android:textSize="@dimen/market_watch_small_font_size"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -166,10 +168,11 @@
                 android:text="S&amp;P 500"
                 android:textStyle="bold"
                 android:textColor="@android:color/white"
+                android:textSize="@dimen/market_watch_small_font_size"
                 android:gravity="left"
-                android:paddingLeft="8dp"
-                android:paddingTop="4dp"
-                android:paddingBottom="4dp" />
+                android:paddingLeft="14dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp" />
 
             <TextView
                 android:id="@+id/textView"
@@ -179,7 +182,7 @@
                 android:paddingRight="10dp"
                 android:paddingTop="10dp"
                 android:text="1,661.11"
-                android:textSize="18dp"
+                android:textSize="@dimen/market_watch_large_font_size"
                 android:textStyle="bold" />
 
             <TextView
@@ -191,7 +194,7 @@
                 android:paddingTop="2dp"
                 android:text="6.03"
                 android:textColor="#ff5bcc2b"
-                android:textSize="18dp"
+                android:textSize="@dimen/market_watch_large_font_size"
                 android:textStyle="bold" />
 
             <TextView
@@ -203,7 +206,7 @@
                 android:paddingTop="2dp"
                 android:text="(0.36%)"
                 android:textColor="#ffe5391f"
-                android:textSize="18dp"
+                android:textSize="@dimen/market_watch_large_font_size"
                 android:textStyle="bold" />
 
             <TextView
@@ -216,7 +219,7 @@
                 android:paddingTop="2dp"
                 android:text="23.03 M"
                 android:textColor="#a10f090c"
-                android:textSize="14dp"
+                android:textSize="@dimen/market_watch_small_font_size"
                 android:textStyle="bold" />
         </LinearLayout>
 

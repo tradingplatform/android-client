@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
+import android.widget.TextView;
 
 
 /**
@@ -30,22 +31,22 @@ public class MarketGraphTabs extends Fragment {
         mTabHost = new FragmentTabHost(getActivity());
         mTabHost.setup(getActivity(), getChildFragmentManager(), R.id.tabcontent1);
 
-        mTabHost.addTab(mTabHost.newTabSpec("1D").setIndicator("1D"),
+        mTabHost.addTab(mTabHost.newTabSpec("1D").setIndicator(CreateTabIndicator(inflater, "1D")),
                 OneDayFragment.class, null);
 
-        mTabHost.addTab(mTabHost.newTabSpec("1W").setIndicator("1W"),
+        mTabHost.addTab(mTabHost.newTabSpec("1W").setIndicator(CreateTabIndicator(inflater, "1W")),
                 OneWeekFragment.class, null);
 
-        mTabHost.addTab(mTabHost.newTabSpec("1M").setIndicator("1M"),
+        mTabHost.addTab(mTabHost.newTabSpec("1M").setIndicator(CreateTabIndicator(inflater, "1M")),
                 OneMonthFragment.class, null);
 
-        mTabHost.addTab(mTabHost.newTabSpec("3M").setIndicator("3M"),
+        mTabHost.addTab(mTabHost.newTabSpec("3M").setIndicator(CreateTabIndicator(inflater, "3M")),
                 ThreeMonthFragment.class, null);
 
-        mTabHost.addTab(mTabHost.newTabSpec("6M").setIndicator("6M"),
+        mTabHost.addTab(mTabHost.newTabSpec("6M").setIndicator(CreateTabIndicator(inflater, "6M")),
                 SixMonthFragment.class, null);
 
-        mTabHost.addTab(mTabHost.newTabSpec("1Y").setIndicator("1Y"),
+        mTabHost.addTab(mTabHost.newTabSpec("1Y").setIndicator(CreateTabIndicator(inflater, "1Y")),
                 OneYearFragment.class, null);
 
         mTabHost.getTabWidget().setBackgroundColor(Color.parseColor("#E6E6E6"));
@@ -70,5 +71,15 @@ public class MarketGraphTabs extends Fragment {
         mTabHost.setCurrentTab(0);
 
         return mTabHost;
+    }
+
+    private View CreateTabIndicator(LayoutInflater inflater, String indicatorText)
+    {
+        View tabIndicator = inflater.inflate(R.layout.tab_indicator, null);
+
+        TextView textView = (TextView)tabIndicator.findViewById(R.id.textView);
+        textView.setText(indicatorText);
+
+        return tabIndicator;
     }
 }

@@ -15,4 +15,7 @@
     <dimen name="twelveSp">12sp</dimen>
     <dimen name="threedp">3dp</dimen>
 
+    <dimen name="market_watch_large_font_size">30sp</dimen>
+    <dimen name="market_watch_small_font_size">18sp</dimen>
+
 </resources>
