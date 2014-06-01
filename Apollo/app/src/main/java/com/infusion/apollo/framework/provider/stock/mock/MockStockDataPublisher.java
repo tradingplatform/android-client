@@ -81,7 +81,7 @@ public class MockStockDataPublisher implements IStockDataPublisher {
             stockData.Last = getRandomDouble(400, 406);
             stockData.Change = getRandomDouble(1, 5);
             stockData.ChangePercent = getRandomDouble(0, 2);
-            stockData.Volume = getRandomInteger(450000000, 457000000);
+            stockData.Volume = getRandomInteger(4500000, 4570000);
             stockData.Bid = getRandomDouble(400, 405);
             stockData.BidFactor = 500;
             stockData.Ask = getRandomDouble(405, 408);

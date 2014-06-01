@@ -5,131 +5,120 @@
     android:orientation="vertical"
     tools:context="com.infusion.apollo.app.StockDataFragment">
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:background="#262526"
+        android:padding="6dp">
 
-        <TextView
-            android:id="@+id/stock_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="9sp"
-            android:text="Google Inc"
-            android:textSize="33sp" />
-
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/market_symbol_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:paddingBottom="7sp"
-                android:text="(NASDAQ:GOOGL)"
-                android:textSize="14sp" />
-        </FrameLayout>
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:background="#8C8C8C" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/last_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="563.80"
-                android:textSize="36sp"
-                android:textStyle="bold" />
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/title_actions_layout"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/change_text_view"
+                    android:id="@+id/stock_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="4sp"
-                    android:text="+8.35"
-                    android:textSize="18sp" />
+                    android:text="GOOGLE INC"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/change_percentage_text_view"
+                    android:id="@+id/market_symbol_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="(1.50%)"
-                    android:textSize="18sp" />
+                    android:text="GOOGL - NASDAQ"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
             </LinearLayout>
-        </LinearLayout>
 
-        <Space
-            android:layout_width="5dp"
-            android:layout_height="match_parent" />
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-
-            android:shrinkColumns="*"
-            android:stretchColumns="*">
-
-            <TableRow
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:id="@+id/title_actions_layout"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="2sp">
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Bid"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/bid_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:text="404.70x500"
-                    android:textSize="14sp" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="2sp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Ask"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/ask_text_view"
+                <Button
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_gravity="right"
-                    android:text="408.79x100"
-                    android:textSize="14sp" />
+                    android:background="#019901"
+                    android:minWidth="50dp"
+                    android:padding="6dp"
+                    android:text="Trade"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="6dp"
+                    android:background="#6431cb"
+                    android:minWidth="50dp"
+                    android:text="..."
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </RelativeLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#019901"
+            android:shrinkColumns="*"
+            android:stretchColumns="1">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.8"
+                    android:paddingLeft="6dp"
+                    android:paddingTop="6dp"
+                    android:text="Last"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.8"
+                    android:paddingTop="6dp"
+                    android:text="Change"
+                    android:textColor="@android:color/white" />
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#808080"
+                    android:paddingLeft="6dp"
+                    android:paddingTop="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Volume"
+                        android:textColor="@android:color/white" />
+                </FrameLayout>
             </TableRow>
 
             <TableRow
@@ -137,28 +126,126 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/last_text_view"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Volume"
-                    android:textSize="14sp" />
+                    android:layout_weight="1.8"
+                    android:paddingBottom="6dp"
+                    android:paddingLeft="6dp"
+                    android:text="563.80"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/volume_text_view"
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:text="4.56M"
-                    android:textSize="14sp" />
+                    android:layout_weight="1.8"
+                    android:paddingBottom="6dp">
+
+                    <TextView
+                        android:id="@+id/change_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+8.35"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/change_percentage_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:text="(1.50%)"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#808080"
+                    android:paddingBottom="6dp"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp">
+
+                    <TextView
+                        android:id="@+id/volume_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4.56M"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
             </TableRow>
         </TableLayout>
-    </LinearLayout>
+    </FrameLayout>
 
-    <View
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:background="#8C8C8C" />
+        android:layout_height="wrap_content"
+        android:background="#8C8C8C"
+        android:shrinkColumns="*"
+        android:stretchColumns="*">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            android:background="@android:color/white"
+            android:padding="6dp">
+
+            <TextView
+                style="@style/StockData.Label"
+                android:layout_margin="0dp"
+                android:text="Bid" />
+
+            <TextView
+                android:id="@+id/bid_text_view"
+                style="@style/StockData.Value"
+                android:gravity="center"
+                android:text="404.70x500" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="#808080"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/StockData.Label"
+                        android:layout_margin="0dp"
+                        android:text="Level"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        style="@style/StockData.Label"
+                        android:text="II"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <TextView
+                style="@style/StockData.Label"
+                android:layout_margin="0dp"
+                android:text="Ask" />
+
+            <TextView
+                android:id="@+id/ask_text_view"
+                style="@style/StockData.Value"
+                android:layout_gravity="center"
+                android:text="408.79x100" />
+        </TableRow>
+    </TableLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -168,136 +255,197 @@
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginRight="6dp"
             android:layout_weight="1"
-
+            android:background="#8C8C8C"
             android:shrinkColumns="*"
             android:stretchColumns="*">
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="2sp">
+            <TableRow style="@style/StockData.TableRow">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Range"
-                    android:textSize="14sp" />
+                    style="@style/StockData.Label"
+                    android:text="Day Hi" />
 
                 <TextView
-                    android:id="@+id/range_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:text="401.2 - 405.8"
-                    android:textSize="14sp" />
+                    android:id="@+id/hi_text_view"
+                    style="@style/StockData.Value"
+                    android:text="405.89" />
             </TableRow>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="2sp">
+            <TableRow style="@style/StockData.TableRow">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="52 Wk Range"
-                    android:textSize="14sp" />
+                    style="@style/StockData.Label"
+                    android:text="Day Lo" />
 
                 <TextView
-                    android:id="@+id/fifty_two_range_text_view"
+                    android:id="@+id/lo_text_view"
+                    style="@style/StockData.Value"
+                    android:text="401.02" />
+            </TableRow>
+
+            <TableRow style="@style/StockData.TableRow">
+
+                <TextView
+                    style="@style/StockData.Label"
+                    android:text="52 Wk Hi" />
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
-                    android:text="400.0 - 500.9"
-                    android:textSize="14sp" />
+                    android:gravity="right"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/fifty_two_hi_text_view"
+                        style="@style/StockData.Value"
+                        android:text="518.95" />
+
+                    <TextView
+                        android:id="@+id/fifty_two_hi_date_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="6dp"
+                        android:text="(6/15/12)"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow style="@style/StockData.TableRow">
+
+                <TextView
+                    style="@style/StockData.Label"
+                    android:text="52 Wk Lo" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/fifty_two_lo_text_view"
+                        style="@style/StockData.Value"
+                        android:text="310.31" />
+
+                    <TextView
+                        android:id="@+id/fifty_two_lo_date_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginRight="6dp"
+                        android:text="(12/18/12)"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow style="@style/StockData.TableRow">
+
+                <TextView
+                    style="@style/StockData.Label"
+                    android:text="Mk Cap" />
+
+                <TextView
+                    android:id="@+id/market_cap_text_view"
+                    style="@style/StockData.Value"
+                    android:text="52.1B" />
             </TableRow>
         </TableLayout>
 
-        <Space
-            android:layout_width="5dp"
-            android:layout_height="match_parent" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_weight="1">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/fifty_two_week_label"
+                android:background="@android:color/holo_orange_light">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="CHART" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/fifty_two_week_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:text="52 Week Overview" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginRight="6dp"
             android:layout_weight="1"
-
+            android:background="#8C8C8C"
             android:shrinkColumns="*"
             android:stretchColumns="*">
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="2sp">
+            <TableRow style="@style/StockData.TableRow">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Mk Cap"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/market_cap_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:text="52.1B"
-                    android:textSize="14sp" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="2sp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="PE"
-                    android:textSize="14sp" />
+                    style="@style/StockData.Label"
+                    android:text="P/E" />
 
                 <TextView
                     android:id="@+id/price_per_earnings_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="right"
-                    android:text="14.3x"
-                    android:textSize="14sp" />
+                    style="@style/StockData.Value"
+                    android:text="14.3x" />
             </TableRow>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <TableRow style="@style/StockData.TableRow">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="EPS"
-                    android:textSize="14sp" />
+                    style="@style/StockData.Label"
+                    android:text="E/S" />
 
                 <TextView
                     android:id="@+id/earnings_per_share_text_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:text="18.41"
-                    android:textSize="14sp" />
+                    style="@style/StockData.Value"
+                    android:text="41.01647" />
             </TableRow>
         </TableLayout>
-    </LinearLayout>
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
-        android:background="@android:color/holo_orange_light">
-
-        <TextView
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="CHART"
-            android:textSize="30sp" />
-    </FrameLayout>
+            android:layout_marginLeft="6dp"
+            android:layout_weight="1">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/StockData.Label"
+                    android:layout_marginLeft="0dp"
+                    android:text="Next Earnings Date" />
+
+                <TextView
+                    android:id="@+id/next_earnings_per_share_text_view"
+                    style="@style/StockData.Value"
+                    android:text="Oct 19 '13" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
 </LinearLayout>

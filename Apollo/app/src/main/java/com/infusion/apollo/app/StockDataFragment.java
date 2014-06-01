@@ -1,6 +1,5 @@
 package com.infusion.apollo.app;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,11 +49,23 @@ public class StockDataFragment extends BaseFragment implements IStockDataSubscri
     @InjectView(R.id.volume_text_view)
     private TextView mVolumeView;
 
-    @InjectView(R.id.range_text_view)
-    private TextView mDayRangeView;
+    @InjectView(R.id.lo_text_view)
+    private TextView mDayLoView;
 
-    @InjectView(R.id.fifty_two_range_text_view)
-    private TextView mFiftyTwoRangeView;
+    @InjectView(R.id.hi_text_view)
+    private TextView mDayHiView;
+
+    @InjectView(R.id.fifty_two_lo_text_view)
+    private TextView mFiftyTwoDayLoView;
+
+    @InjectView(R.id.fifty_two_lo_date_text_view)
+    private TextView mFiftyTwoDayLoDateView;
+
+    @InjectView(R.id.fifty_two_hi_text_view)
+    private TextView mFiftyTwoDayHiView;
+
+    @InjectView(R.id.fifty_two_hi_date_text_view)
+    private TextView mFiftyTwoDayHiDateView;
 
     @InjectView(R.id.market_cap_text_view)
     private TextView mMarketCapView;
@@ -128,21 +139,18 @@ public class StockDataFragment extends BaseFragment implements IStockDataSubscri
 
     private void mergeStockData(StockData data) {
         // handle the event where we receive stock data - adapt to view
-        mStockView.setText("Google Inc.");
-        mMarketSymbolView.setText("(NASDAQ:GOOGL)");
-
         mLastView.setText(String.format("%.2f", data.Last));
         mChangeView.setText(String.format("+%.2f", data.Change));
-        mChangeView.setTextColor(Color.parseColor("#61C33B"));
-
         mChangePercentageView.setText(String.format("(%.2f%%)", data.ChangePercent));
 
         mBidView.setText(String.format("%.2fx%d", data.Bid, (int) data.BidFactor));
         mAskView.setText(String.format("%.2fx%d", data.Ask, (int) data.AskFactor));
         mVolumeView.setText(String.format("%.2fM", data.Volume / 1000000.0));
 
-        mDayRangeView.setText(String.format("%.2f - %.2f", data.DayLo, data.DayHi));
-        mFiftyTwoRangeView.setText(String.format("%.2f - %.2f", data.FiftyTwoWeekLo, data.FiftyTwoWeekHi));
+        mDayLoView.setText(String.format("%.2f", data.DayLo));
+        mDayHiView.setText(String.format("%.2f", data.DayHi));
+        mFiftyTwoDayLoView.setText(String.format("%.2f", data.FiftyTwoWeekLo));
+        mFiftyTwoDayHiView.setText(String.format("%.2f", data.FiftyTwoWeekHi));
 
         mMarketCapView.setText(String.format("%.1fB", data.MarketCap / 1000000000));
         mPricePerEarningsView.setText(String.format("%.1fx", data.PricePerEarnings));
