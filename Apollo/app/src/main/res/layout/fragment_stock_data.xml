@@ -362,18 +362,12 @@
             android:layout_marginRight="6dp"
             android:layout_weight="1">
 
-            <FrameLayout
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_above="@+id/fifty_two_week_label"
-                android:background="@android:color/holo_orange_light">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="CHART" />
-            </FrameLayout>
+                android:scaleType="fitCenter"
+                android:src="@drawable/mock_chart" />
 
             <TextView
                 android:id="@+id/fifty_two_week_label"
