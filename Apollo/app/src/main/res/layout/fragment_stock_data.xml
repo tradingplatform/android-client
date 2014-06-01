@@ -28,7 +28,7 @@
                     android:layout_height="wrap_content"
                     android:text="GOOGLE INC"
                     android:textColor="@android:color/white"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/medium_font_size"
                     android:textStyle="bold" />
 
                 <TextView
@@ -37,7 +37,7 @@
                     android:layout_height="wrap_content"
                     android:text="GOOGL - NASDAQ"
                     android:textColor="@android:color/white"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/medium_font_size"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -57,6 +57,7 @@
                     android:padding="6dp"
                     android:text="Trade"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/medium_font_size"
                     android:textStyle="bold" />
 
                 <Button
@@ -66,6 +67,7 @@
                     android:background="#6431cb"
                     android:minWidth="50dp"
                     android:text="..."
+                    android:textSize="@dimen/medium_font_size"
                     android:textColor="@android:color/white"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -95,6 +97,7 @@
                     android:paddingLeft="6dp"
                     android:paddingTop="6dp"
                     android:text="Last"
+                    android:textSize="@dimen/small_font_size"
                     android:textColor="@android:color/white" />
 
                 <TextView
@@ -103,6 +106,7 @@
                     android:layout_weight="1.8"
                     android:paddingTop="6dp"
                     android:text="Change"
+                    android:textSize="@dimen/small_font_size"
                     android:textColor="@android:color/white" />
 
                 <FrameLayout
@@ -117,6 +121,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Volume"
+                        android:textSize="@dimen/small_font_size"
                         android:textColor="@android:color/white" />
                 </FrameLayout>
             </TableRow>
@@ -134,7 +139,7 @@
                     android:paddingLeft="6dp"
                     android:text="563.80"
                     android:textColor="@android:color/white"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/medium_font_size"
                     android:textStyle="bold" />
 
                 <LinearLayout
@@ -149,7 +154,7 @@
                         android:layout_height="wrap_content"
                         android:text="+8.35"
                         android:textColor="@android:color/white"
-                        android:textSize="20sp"
+                        android:textSize="@dimen/medium_font_size"
                         android:textStyle="bold" />
 
                     <TextView
@@ -159,7 +164,7 @@
                         android:layout_marginLeft="5sp"
                         android:text="(1.50%)"
                         android:textColor="@android:color/white"
-                        android:textSize="20sp"
+                        android:textSize="@dimen/medium_font_size"
                         android:textStyle="bold" />
                 </LinearLayout>
 
@@ -178,7 +183,7 @@
                         android:layout_height="wrap_content"
                         android:text="4.56M"
                         android:textColor="@android:color/white"
-                        android:textSize="20sp"
+                        android:textSize="@dimen/medium_font_size"
                         android:textStyle="bold" />
                 </FrameLayout>
             </TableRow>
@@ -202,12 +207,14 @@
             <TextView
                 style="@style/StockData.Label"
                 android:layout_margin="0dp"
+                android:textSize="@dimen/medium_font_size"
                 android:text="Bid" />
 
             <TextView
                 android:id="@+id/bid_text_view"
                 style="@style/StockData.Value"
                 android:gravity="center"
+                android:textSize="@dimen/medium_font_size"
                 android:text="404.70x500" />
 
             <FrameLayout
@@ -225,11 +232,13 @@
                         style="@style/StockData.Label"
                         android:layout_margin="0dp"
                         android:text="Level"
+                        android:textSize="@dimen/medium_font_size"
                         android:textColor="@android:color/white" />
 
                     <TextView
                         style="@style/StockData.Label"
                         android:text="II"
+                        android:textSize="@dimen/medium_font_size"
                         android:textColor="@android:color/white" />
                 </LinearLayout>
             </FrameLayout>
@@ -237,12 +246,14 @@
             <TextView
                 style="@style/StockData.Label"
                 android:layout_margin="0dp"
+                android:textSize="@dimen/medium_font_size"
                 android:text="Ask" />
 
             <TextView
                 android:id="@+id/ask_text_view"
                 style="@style/StockData.Value"
                 android:layout_gravity="center"
+                android:textSize="@dimen/medium_font_size"
                 android:text="408.79x100" />
         </TableRow>
     </TableLayout>
@@ -265,11 +276,13 @@
 
                 <TextView
                     style="@style/StockData.Label"
+                    android:textSize="@dimen/medium_font_size"
                     android:text="Day Hi" />
 
                 <TextView
                     android:id="@+id/hi_text_view"
                     style="@style/StockData.Value"
+                    android:textSize="@dimen/medium_font_size"
                     android:text="405.89" />
             </TableRow>
 
@@ -277,11 +290,13 @@
 
                 <TextView
                     style="@style/StockData.Label"
+                    android:textSize="@dimen/medium_font_size"
                     android:text="Day Lo" />
 
                 <TextView
                     android:id="@+id/lo_text_view"
                     style="@style/StockData.Value"
+                    android:textSize="@dimen/medium_font_size"
                     android:text="401.02" />
             </TableRow>
 
@@ -289,6 +304,7 @@
 
                 <TextView
                     style="@style/StockData.Label"
+                    android:textSize="@dimen/medium_font_size"
                     android:text="52 Wk Hi" />
 
                 <LinearLayout
@@ -301,6 +317,7 @@
                     <TextView
                         android:id="@+id/fifty_two_hi_text_view"
                         style="@style/StockData.Value"
+                        android:textSize="@dimen/medium_font_size"
                         android:text="518.95" />
 
                     <TextView
@@ -309,7 +326,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="6dp"
                         android:text="(6/15/12)"
-                        android:textSize="14sp" />
+                        android:textSize="@dimen/small_font_size"
+                        />
                 </LinearLayout>
             </TableRow>
 
@@ -317,6 +335,7 @@
 
                 <TextView
                     style="@style/StockData.Label"
+                    android:textSize="@dimen/medium_font_size"
                     android:text="52 Wk Lo" />
 
                 <LinearLayout
@@ -329,16 +348,17 @@
                     <TextView
                         android:id="@+id/fifty_two_lo_text_view"
                         style="@style/StockData.Value"
+                        android:textSize="@dimen/medium_font_size"
                         android:text="310.31" />
 
                     <TextView
                         android:id="@+id/fifty_two_lo_date_text_view"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-
                         android:layout_marginRight="6dp"
                         android:text="(12/18/12)"
-                        android:textSize="14sp" />
+                        android:textSize="@dimen/small_font_size"
+                        />
                 </LinearLayout>
             </TableRow>
 
@@ -346,11 +366,13 @@
 
                 <TextView
                     style="@style/StockData.Label"
+                    android:textSize="@dimen/medium_font_size"
                     android:text="Mk Cap" />
 
                 <TextView
                     android:id="@+id/market_cap_text_view"
                     style="@style/StockData.Value"
+                    android:textSize="@dimen/medium_font_size"
                     android:text="52.1B" />
             </TableRow>
         </TableLayout>
@@ -375,6 +397,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:gravity="center"
+                android:textSize="@dimen/small_font_size"
                 android:text="52 Week Overview" />
         </RelativeLayout>
     </LinearLayout>
@@ -397,11 +420,13 @@
 
                 <TextView
                     style="@style/StockData.Label"
+                    android:textSize="@dimen/medium_font_size"
                     android:text="P/E" />
 
                 <TextView
                     android:id="@+id/price_per_earnings_text_view"
                     style="@style/StockData.Value"
+                    android:textSize="@dimen/medium_font_size"
                     android:text="14.3x" />
             </TableRow>
 
@@ -409,11 +434,13 @@
 
                 <TextView
                     style="@style/StockData.Label"
+                    android:textSize="@dimen/medium_font_size"
                     android:text="E/S" />
 
                 <TextView
                     android:id="@+id/earnings_per_share_text_view"
                     style="@style/StockData.Value"
+                    android:textSize="@dimen/medium_font_size"
                     android:text="41.01647" />
             </TableRow>
         </TableLayout>
@@ -433,11 +460,13 @@
                 <TextView
                     style="@style/StockData.Label"
                     android:layout_marginLeft="0dp"
+                    android:textSize="@dimen/small_font_size"
                     android:text="Next Earnings Date" />
 
                 <TextView
                     android:id="@+id/next_earnings_per_share_text_view"
                     style="@style/StockData.Value"
+                    android:textSize="@dimen/large_font_size"
                     android:text="Oct 19 '13" />
             </LinearLayout>
         </FrameLayout>

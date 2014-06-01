@@ -22,7 +22,7 @@
             android:layout_gravity="right"
             android:text="APPLE"
             android:textColor="@android:color/white"
-            android:textSize="25sp" />
+            android:textSize="@dimen/medium_font_size" />
 
         <TextView
             android:id="@+id/priceTextView"
@@ -31,7 +31,7 @@
             android:layout_gravity="right"
             android:text="100"
             android:textColor="@android:color/white"
-            android:textSize="20sp" />
+            android:textSize="@dimen/medium_font_size" />
 
         <TextView
             android:id="@+id/lastChangeTextView"
@@ -40,7 +40,7 @@
             android:layout_gravity="right"
             android:text="100"
             android:textColor="@android:color/white"
-            android:textSize="15sp" />
+            android:textSize="@dimen/small_font_size" />
 
     </LinearLayout>
 </RelativeLayout>
