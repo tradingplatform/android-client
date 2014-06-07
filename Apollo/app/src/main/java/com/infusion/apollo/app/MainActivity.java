@@ -6,7 +6,11 @@ import roboguice.activity.RoboFragmentActivity;
 import roboguice.inject.ContentView;
 
 @ContentView(R.layout.activity_main)
-public class MainActivity extends RoboFragmentActivity implements WatchListFragment.IWatchListFragmentListener, MarketOverView.onDowVisibilityEventListener, MarketOverView.onNasdaqVisibilityEventListener, MarketOverView.onSP500VisibilityEventListener  {
+public class MainActivity extends RoboFragmentActivity implements WatchListFragment.IWatchListFragmentListener,
+                                                                  StockDataFragment.IStockDataFragmentListener,
+                                                                  MarketOverView.onDowVisibilityEventListener,
+                                                                  MarketOverView.onNasdaqVisibilityEventListener,
+                                                                  MarketOverView.onSP500VisibilityEventListener  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +29,15 @@ public class MainActivity extends RoboFragmentActivity implements WatchListFragm
         // load stock data for symbol
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.right_pane_container, StockDataFragment.newInstance(market, symbol))
+                .addToBackStack(null)
+                .commit();
+    }
+
+    @Override
+    public void onEnterTradeRequested(String symbol) {
+        // load trade entry for symbol
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.right_pane_container, TradeEntryFragment.newInstance(symbol))
                 .addToBackStack(null)
                 .commit();
     }

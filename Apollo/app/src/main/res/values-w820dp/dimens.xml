@@ -6,4 +6,5 @@
     <dimen name="large_font_size">30sp</dimen>
     <dimen name="medium_font_size">24sp</dimen>
     <dimen name="small_font_size">18sp</dimen>
+    <dimen name="padding_section">10dp</dimen>
 </resources>

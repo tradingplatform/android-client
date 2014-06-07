@@ -25,4 +25,6 @@
     <color name="panZoomCloseColor">#F9BA1A</color>
     <color name="primary_title_background">#00BBBC</color>
     <color name="secondary_title_background">#2DB245</color>
+    <color name="gray_light">#FFDEDEDE</color>
+    <color name="green1">#FF60B800</color>
 </resources>

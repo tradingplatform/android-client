@@ -1,9 +1,11 @@
 package com.infusion.apollo.app;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.inject.Inject;
@@ -24,6 +26,9 @@ public class StockDataFragment extends BaseFragment implements IStockDataSubscri
 
     @Inject
     private IStockDataPublisher mStockDataPublisher;
+
+    @InjectView(R.id.tradeButton)
+    private Button mTradeButton;
 
     @InjectView(R.id.stock_text_view)
     private TextView mStockView;
@@ -79,6 +84,8 @@ public class StockDataFragment extends BaseFragment implements IStockDataSubscri
     private String mMarket;
     private String mSymbol;
 
+    private IStockDataFragmentListener mListener;
+
     public StockDataFragment() {
         // solve data provider dependencies
     }
@@ -105,7 +112,30 @@ public class StockDataFragment extends BaseFragment implements IStockDataSubscri
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.fragment_stock_data, container, false);
+        View view = inflater.inflate(R.layout.fragment_stock_data, container, false);
+
+        Button button = (Button)view.findViewById(R.id.tradeButton);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mListener != null)
+                {
+                    mListener.onEnterTradeRequested(mSymbol);
+                }
+            }
+        });
+
+        return view;
+    }
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+
+        if (!(activity instanceof IStockDataFragmentListener)) {
+            throw new IllegalStateException("Activity must implement fragment's callbacks.");
+        }
+
+        mListener = (IStockDataFragmentListener) activity;
     }
 
     @Override
@@ -155,5 +185,9 @@ public class StockDataFragment extends BaseFragment implements IStockDataSubscri
         mMarketCapView.setText(String.format("%.1fB", data.MarketCap / 1000000000));
         mPricePerEarningsView.setText(String.format("%.1fx", data.PricePerEarnings));
         mEarningsPerShareView.setText(String.format("%.2f", data.EarningsPerShare));
+    }
+
+    public interface IStockDataFragmentListener {
+        public void onEnterTradeRequested(String symbol);
     }
 }
