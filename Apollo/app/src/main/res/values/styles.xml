@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Light.NoTitleBar.Fullscreen"></style>
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar"></style>
 
     <style name="WrapContent">
         <item name="android:layout_width">wrap_content</item>
