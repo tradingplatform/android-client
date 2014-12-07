@@ -6,6 +6,7 @@
         android:minSdkVersion="14"
         android:targetSdkVersion="19" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name="com.infusion.apollo.setup.ApolloApp"
@@ -26,6 +27,7 @@
         </activity>
 
         <service android:name="com.infusion.apollo.framework.provider.watch.WatchListService" />
+        <service android:name="com.infusion.apollo.framework.provider.watch.SignalRWatchListService" />
     </application>
 
 </manifest>

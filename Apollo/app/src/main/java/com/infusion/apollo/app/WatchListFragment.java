@@ -17,6 +17,7 @@ import android.widget.GridView;
 import com.infusion.apollo.adapter.InstrumentPriceSummaryAdapter;
 import com.infusion.apollo.framework.provider.watch.IWatchListService;
 import com.infusion.apollo.framework.provider.watch.IWatchListServiceListener;
+import com.infusion.apollo.framework.provider.watch.SignalRWatchListService;
 import com.infusion.apollo.framework.provider.watch.WatchListService;
 import com.infusion.apollo.framework.provider.watch.model.InstrumentPriceSummary;
 
@@ -26,7 +27,7 @@ public class WatchListFragment extends BaseFragment implements IWatchListService
     private IWatchListService mWatchListService;
     private final ServiceConnection mConnection = new ServiceConnection() {
         public void onServiceConnected(ComponentName className, IBinder service) {
-            WatchListService.Binder binder = (WatchListService.Binder) service;
+            SignalRWatchListService.Binder binder = (SignalRWatchListService.Binder) service;
             mWatchListService = binder.getService();
             mWatchListService.subscribe(WatchListFragment.this);
         }
@@ -55,7 +56,7 @@ public class WatchListFragment extends BaseFragment implements IWatchListService
         super.onResume();
 
         // connect to the service for updates
-        Intent intent = new Intent(getActivity(), WatchListService.class);
+        Intent intent = new Intent(getActivity(), SignalRWatchListService.class);
         getActivity().bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
     }
 
