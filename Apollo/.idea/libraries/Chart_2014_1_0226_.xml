@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="Chart-2014.1.0226">
+  <library name="Chart-2014.1.0226-">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/Chart-2014.1.0226/classes.jar!/" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/Chart-2014.1.0226/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/Chart-2014.1.0226/res" />
     </CLASSES>
     <JAVADOC />
